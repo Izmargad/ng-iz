@@ -608,6 +608,61 @@
             "templateData": "<h2>Products</h2>\r\n\r\n<div *ngFor=\"let product of products\">\r\n  <h3>\r\n    <a\r\n      [title]=\"product.name + ' details'\"\r\n      [routerLink]=\"['/products', product.id]\"\r\n    >\r\n      {{ product.name }}\r\n    </a>\r\n  </h3>\r\n\r\n  <p *ngIf=\"product.description\">Description: {{ product.description }}</p>\r\n\r\n  <button type=\"button\" (click)=\"share()\">Share</button>\r\n\r\n  <app-product-alerts [product]=\"product\" (notify)=\"onNotify()\">\r\n  </app-product-alerts>\r\n</div>\r\n"
         },
         {
+            "name": "SideNavComponent",
+            "id": "component-SideNavComponent-d4ae932e48cbc14ba55bb3572bfe7340b851f273f592f2fe4691f93ee895dea4bbc161cad7555ddb3897353a25091d5d623160584a2c76cfc94479890523761c",
+            "file": "src/app/side-nav/side-nav.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-side-nav",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./side-nav.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-side-nav',\n  templateUrl: './side-nav.component.html',\n  styles: [\n  ]\n})\nexport class SideNavComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>side-nav works!</p>\n"
+        },
+        {
             "name": "TopBarComponent",
             "id": "component-TopBarComponent-7f710a6201f08b7dd74018baf39860141e4fa84d60678e511265d83221f84c3cb99ad7c901740b024918455b7898f2e1ec719c95c3a8b0241844cd46f0e8fc67",
             "file": "src/app/top-bar/top-bar.component.ts",
@@ -651,13 +706,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-c824bfaa908afa1417846696621c92cf5fa3d33da07ce885de455d9360ed973565c12fd10a2aceec12145d945834f8d39e3c25e8090a3e6dadab80f629dd266b",
+            "id": "module-AppModule-29a729f13c936d91564f010f6ef931979af847c24f106b374d1d950a94cf7165ff8111e316e63473406410da086321a9716a9bdc4fc88f13a04cfba188bf518b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { RouterModule } from '@angular/router';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { TopBarComponent } from './top-bar/top-bar.component';\r\nimport { ProductListComponent } from './product-list/product-list.component';\r\nimport { ProductAlertsComponent } from './product-alerts/product-alerts.component';\r\nimport { ProductDetailsComponent } from './product-details/product-details.component';\r\n\r\n@NgModule({\r\n  imports: [\r\n    BrowserModule,\r\n    ReactiveFormsModule,\r\n    RouterModule.forRoot([\r\n      { path: '', component: ProductListComponent },\r\n      { path: 'products/:productId', component: ProductDetailsComponent },\r\n    ]),\r\n  ],\r\n  declarations: [\r\n    AppComponent,\r\n    TopBarComponent,\r\n    ProductListComponent,\r\n    ProductAlertsComponent,\r\n    ProductDetailsComponent,\r\n  ],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n\r\n/*\r\nCopyright Google LLC. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at https://angular.io/license\r\n*/\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { RouterModule } from '@angular/router';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { TopBarComponent } from './top-bar/top-bar.component';\r\nimport { ProductListComponent } from './product-list/product-list.component';\r\nimport { ProductAlertsComponent } from './product-alerts/product-alerts.component';\r\nimport { ProductDetailsComponent } from './product-details/product-details.component';\nimport { SideNavComponent } from './side-nav/side-nav.component';\r\n\r\n@NgModule({\r\n  imports: [\r\n    BrowserModule,\r\n    ReactiveFormsModule,\r\n    RouterModule.forRoot([\r\n      { path: '', component: ProductListComponent },\r\n      { path: 'products/:productId', component: ProductDetailsComponent },\r\n    ]),\r\n  ],\r\n  declarations: [\r\n    AppComponent,\r\n    TopBarComponent,\r\n    ProductListComponent,\r\n    ProductAlertsComponent,\r\n    ProductDetailsComponent,\r\n    SideNavComponent,\r\n  ],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n\r\n/*\r\nCopyright Google LLC. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at https://angular.io/license\r\n*/\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -677,6 +732,9 @@
                         },
                         {
                             "name": "ProductListComponent"
+                        },
+                        {
+                            "name": "SideNavComponent"
                         },
                         {
                             "name": "TopBarComponent"
@@ -722,6 +780,16 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -729,14 +797,14 @@
                 "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
-                "name": "environment",
+                "name": "FirstStory",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/stories/top-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  production: true\r\n}"
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Large",
@@ -841,16 +909,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -861,11 +919,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/top-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props:args,\n})"
             }
         ],
         "functions": [],
@@ -893,6 +971,18 @@
                     "type": "literal type"
                 }
             ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -905,16 +995,26 @@
                     "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
-            "src/environments/environment.prod.ts": [
+            "src/stories/top-bar.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "FirstStory",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
+                    "file": "src/stories/top-bar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  production: true\r\n}"
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/top-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props:args,\n})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -1052,7 +1152,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 3,
+        "count": 2,
         "status": "low",
         "files": [
             {
@@ -1108,6 +1208,15 @@
                 "name": "products",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/side-nav/side-nav.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SideNavComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1283,6 +1392,26 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/top-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FirstStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/top-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
